@@ -9,8 +9,12 @@ body {
     color: #D9D9D9;
     padding: 0;
     height: 100vh;
+}
+
+main {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 header {
@@ -25,7 +29,7 @@ header > h1 {
 
 header > p {
     font-size: 0.875rem;
-    max-width: 450px;
+    max-width: 350px;
     color: #8E8E8E
 }
 
@@ -37,6 +41,8 @@ section.game-status {
     border-radius: 4px;
     margin-block: 30px;
     padding: 5px 0;
+    width: 100%;
+    max-width: 350px;
 }
 
 section.game-status.won {
@@ -61,7 +67,7 @@ section.language-chips {
     flex-wrap: wrap;
     gap: 8px;
     justify-content: center;
-    max-width: 450px;
+    max-width: 350px;
     margin-bottom: 36px;
 }
 
@@ -113,11 +119,12 @@ section.keyboard {
 }
 
 section.keyboard > button {
+    font-weight: bold;
     height: 35px;
     width: 35px;
     background-color: #FCBA29;
-    border: 1px solid #D7D7D7;
     border-radius: 3px;
+    border: 0;
     cursor: pointer;
 }
 
