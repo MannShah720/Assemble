@@ -2,11 +2,12 @@ import { useState } from 'react'
 import { clsx } from "clsx"
 import './App.css'
 import { languages } from "./languages.js"
+import { getFarewellText } from "./utils"
 
 function App() {
 
   // ----------- States -----------
-  const [currentWord, setCurrentWord] = useState("react")
+  const [currentWord, setCurrentWord] = useState("abcde")
 
   const [guessedLetters, setGuessedLetters] = useState([])
 
@@ -18,6 +19,9 @@ function App() {
   const isGameLost = wrongGuessesCount >= languages.length - 1
 
   const isGameOver = isGameWon || isGameLost
+
+  const lastGuessedLetter = guessedLetters[guessedLetters.length - 1]
+  const isLastGuessIncorrect = lastGuessedLetter && !currentWord.includes(lastGuessedLetter)
   
   function addGuessedLetter(letter) {
     setGuessedLetters(prevLetters => 
@@ -56,7 +60,7 @@ function App() {
     )
   })
 
-  // ----------- Lang Chips -----------
+  // ----------- Language Chips -----------
   const langElements = languages.map((lang, index) => {
     const isLanguageLost = index < wrongGuessesCount
     const styles = {
@@ -94,8 +98,25 @@ function App() {
 
   const gameStatusClassName = clsx("game-status",{
     won: isGameWon,
-    lost: isGameLost
+    lost: isGameLost,
+    farewell: !isGameOver && isLastGuessIncorrect
   })
+
+  function renderGameStatus() {
+    if (!isGameOver && isLastGuessIncorrect) {
+      return <p className="farewell-message">
+        {getFarewellText(languages[wrongGuessesCount - 1].name)}
+      </p>
+    }
+
+    if (isGameWon) {
+      return (wonMessage)
+    }
+
+    if (isGameLost) {
+      return (lostMessage)
+    }
+  }
 
   const newGameBtn = <button className="new-game">New Game</button>
 
@@ -109,7 +130,7 @@ function App() {
       </header>
 
       <section className={gameStatusClassName}>
-        {isGameOver ? (isGameWon ? wonMessage : lostMessage) : (null)}
+        {renderGameStatus()}
       </section>
 
       <section className="language-chips">
