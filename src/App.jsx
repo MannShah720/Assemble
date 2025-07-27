@@ -77,6 +77,26 @@ function App() {
     )
   })
 
+  // ----------- Game Status -----------
+  const wonMessage = (
+    <>
+      <h2>You Win!</h2>
+      <p>Well done! 🎉</p>
+    </>
+  )
+
+  const lostMessage = (
+    <>
+      <h2>You Lost!</h2>
+      <p>Better start learning Assembly 😭</p>
+    </>
+  )
+
+  const gameStatusClassName = clsx("game-status",{
+    won: isGameWon,
+    lost: isGameLost
+  })
+
   const newGameBtn = <button className="new-game">New Game</button>
 
   // ----------- Return -----------
@@ -88,9 +108,8 @@ function App() {
           programming languages from Assembly!</p>
       </header>
 
-      <section className="game-status">
-        <h2>You Win!</h2>
-        <p>Well done! 🎉</p>
+      <section className={gameStatusClassName}>
+        {isGameOver ? (isGameWon ? wonMessage : lostMessage) : (null)}
       </section>
 
       <section className="language-chips">
