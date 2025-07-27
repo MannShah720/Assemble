@@ -10,7 +10,14 @@ function App() {
 
   const [guessedLetters, setGuessedLetters] = useState([])
 
+  // ----------- Game Conditions -----------
   const wrongGuessesCount = guessedLetters.filter(letter => !currentWord.includes(letter)).length
+
+  const isGameWon = currentWord.split("").every(letter => guessedLetters.includes(letter))
+
+  const isGameLost = wrongGuessesCount >= languages.length - 1
+
+  const isGameOver = isGameWon || isGameLost
   
   function addGuessedLetter(letter) {
     setGuessedLetters(prevLetters => 
@@ -70,6 +77,8 @@ function App() {
     )
   })
 
+  const newGameBtn = <button className="new-game">New Game</button>
+
   // ----------- Return -----------
   return (
     <main>
@@ -96,7 +105,7 @@ function App() {
         {keyboardElements}
       </section>
 
-      <button className="new-game">New Game</button>
+      {isGameOver && newGameBtn}
     </main>
   )
 }
