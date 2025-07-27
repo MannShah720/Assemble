@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { clsx } from "clsx"
 import './App.css'
 import { languages } from "./languages.js"
 
@@ -6,17 +7,43 @@ function App() {
 
   const [currentWord, setCurrentWord] = useState("react")
 
+  const [guessedLetters, setGuessedLetters] = useState([])
+
+  const wrongGuessesCount = guessedLetters.filter(letter => !currentWord.includes(letter)).length
+  console.log(wrongGuessesCount)
+  
+  function addGuessedLetter(letter) {
+    setGuessedLetters(prevLetters => 
+      prevLetters.includes(letter) ? prevLetters : [...prevLetters, letter])
+  }
+
   // Keyboard
   const alphabet = "abcdefghijklmnopqrstuvwxyz"
   const keyboardElements = alphabet.split("").map(letter => {
+    const isGuessed = guessedLetters.includes(letter)
+    const isCorrect = isGuessed && currentWord.includes(letter)
+    const isWrong = isGuessed && !currentWord.includes(letter)
+    
+    const className = clsx({
+      correct: isCorrect,
+      wrong: isWrong
+    })
+
     return (
-      <button key={letter}>{letter.toUpperCase()}</button>
+      <button 
+      key={letter}
+      className={className} 
+      onClick={() => addGuessedLetter(letter)}
+      >{letter.toUpperCase()}</button>
     )
   })
 
+  // Current Word on-screen
   const wordElements = currentWord.split("").map((letter, index) => {
     return (
-      <span key={index}>{letter.toUpperCase()}</span>
+      <span key={index}>
+        {(guessedLetters.includes(letter)) ? letter.toUpperCase() : ""}
+      </span>
     )
   })
 
@@ -37,9 +64,9 @@ function App() {
   return (
     <main>
       <header>
-          <h1>Codel</h1>
+          <h1>Assemble</h1>
           <p>Guess the word within 8 attempts to protect the 
-          programming languages!</p>
+          programming languages from Assembly!</p>
       </header>
 
       <section className="game-status">
