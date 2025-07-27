@@ -5,19 +5,19 @@ import { languages } from "./languages.js"
 
 function App() {
 
+  // ----------- States -----------
   const [currentWord, setCurrentWord] = useState("react")
 
   const [guessedLetters, setGuessedLetters] = useState([])
 
   const wrongGuessesCount = guessedLetters.filter(letter => !currentWord.includes(letter)).length
-  console.log(wrongGuessesCount)
   
   function addGuessedLetter(letter) {
     setGuessedLetters(prevLetters => 
       prevLetters.includes(letter) ? prevLetters : [...prevLetters, letter])
   }
 
-  // Keyboard
+  // ----------- Keyboard -----------
   const alphabet = "abcdefghijklmnopqrstuvwxyz"
   const keyboardElements = alphabet.split("").map(letter => {
     const isGuessed = guessedLetters.includes(letter)
@@ -31,14 +31,16 @@ function App() {
 
     return (
       <button 
-      key={letter}
-      className={className} 
-      onClick={() => addGuessedLetter(letter)}
-      >{letter.toUpperCase()}</button>
+        key={letter}
+        className={className} 
+        onClick={() => addGuessedLetter(letter)}
+      >
+        {letter.toUpperCase()}
+      </button>
     )
   })
 
-  // Current Word on-screen
+  // ----------- Current Word -----------
   const wordElements = currentWord.split("").map((letter, index) => {
     return (
       <span key={index}>
@@ -47,20 +49,28 @@ function App() {
     )
   })
 
-  const langElements = languages.map(lang => {
+  // ----------- Lang Chips -----------
+  const langElements = languages.map((lang, index) => {
+    const isLanguageLost = index < wrongGuessesCount
     const styles = {
       backgroundColor: lang.backgroundColor,
       color: lang.color
     }
 
+    const className = clsx("chip", isLanguageLost && "lost")
+    
     return (
-      <span 
-      key={lang.name}
-      className="chip" 
-      style={styles}>{lang.name}</span>
+      <span
+        className={className}
+        style={styles}
+        key={lang.name}
+      >
+        {lang.name}
+      </span>
     )
   })
 
+  // ----------- Return -----------
   return (
     <main>
       <header>
