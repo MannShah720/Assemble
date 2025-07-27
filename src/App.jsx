@@ -26,7 +26,7 @@ function App() {
   function addGuessedLetter(letter) {
     setGuessedLetters(prevLetters => 
       prevLetters.includes(letter) ? prevLetters : [...prevLetters, letter])
-  }
+    }
 
   // ----------- Keyboard -----------
   const alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -43,7 +43,8 @@ function App() {
     return (
       <button 
         key={letter}
-        className={className} 
+        className={className}
+        disabled={isGameOver}
         onClick={() => addGuessedLetter(letter)}
       >
         {letter.toUpperCase()}
