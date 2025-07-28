@@ -2,12 +2,12 @@ import { useState } from 'react'
 import { clsx } from "clsx"
 import './App.css'
 import { languages } from "./languages.js"
-import { getFarewellText } from "./utils"
+import { getFarewellText, getRandomWord } from "./utils.js"
 
 function App() {
 
   // ----------- States -----------
-  const [currentWord, setCurrentWord] = useState("abcde")
+  const [currentWord, setCurrentWord] = useState(() => getRandomWord())
 
   const [guessedLetters, setGuessedLetters] = useState([])
 
@@ -25,7 +25,7 @@ function App() {
   const lastGuessedLetter = guessedLetters[guessedLetters.length - 1]
 
   const isLastGuessIncorrect = lastGuessedLetter && !currentWord.includes(lastGuessedLetter)
-  
+
   function addGuessedLetter(letter) {
     setGuessedLetters(prevLetters => 
       prevLetters.includes(letter) ? prevLetters : [...prevLetters, letter])
