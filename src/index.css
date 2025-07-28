@@ -297,6 +297,10 @@ main {
 
 /* ----- Mobile Screens ----- */
 @media (max-width: 767px) {
+  div#root {
+    padding-top: 0;
+  }
+
   section.keyboard > button {
     width: 37px;
     height: 37px;

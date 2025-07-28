@@ -175,15 +175,17 @@ function App() {
     </div>
   )
 
+  const isMobile = width <= 767
+
   // ----------- Return -----------
   return (
     <main className={`theme-${wordListType}`}>
       {
         isGameWon && <Confetti 
                         width={width - 5} 
-                        height={height - 5} 
+                        height={isMobile ? height + 140: height - 5} 
                         recycle={false} 
-                        numberOfPieces={1000}/>
+                        numberOfPieces={isMobile ? 700 : 1000}/>
       }
       <header>
           <h1>Assemble</h1>
