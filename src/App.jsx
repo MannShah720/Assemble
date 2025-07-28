@@ -30,6 +30,11 @@ function App() {
     setGuessedLetters(prevLetters => 
       prevLetters.includes(letter) ? prevLetters : [...prevLetters, letter])
     }
+  
+  function startNewGame() {
+    setCurrentWord(getRandomWord())
+    setGuessedLetters([])
+  }
 
   // ----------- Keyboard -----------
   const alphabet = "abcdefghijklmnopqrstuvwxyz"
@@ -124,7 +129,14 @@ function App() {
     }
   }
 
-  const newGameBtn = <button className="new-game">New Game</button>
+  const newGameBtn = (
+    <button 
+    className="new-game" 
+    onClick={startNewGame}
+    >
+      New Game
+    </button>
+  )
 
   // ----------- Return -----------
   return (
