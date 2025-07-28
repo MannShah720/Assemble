@@ -11,12 +11,20 @@ Live Demo ----> https://assemble10.netlify.app/
 * Guess the letters to "assemble" the word in order to protect the programming languages from the evil Assembly!
 * You can switch from normal words to tech-related words and vice versa (currently under construction)
 
-## Preview
+# Preview
+## Normal Words
 <p align="center">
     <img src="src/assets/Preview1.png" alt="Preview-Img1" width="400">
     <img src="src/assets/Preview2.png" alt="Preview-Img2" width="400">
 </p>
 
+## Tech Words
+<p align="center">
+    <img src="src/assets/Preview3.png" alt="Preview-Img1" width="400">
+    <img src="src/assets/Preview4.png" alt="Preview-Img2" width="400">
+</p>
+
+## Winning & Losing screens
 <p align="center">
     <img src="src/assets/Preview Win.png" alt="Won-Img" width="400">
     <img src="src/assets/Preview Lost.png" alt="Lost-Img" width="400">

@@ -10,6 +10,8 @@ function App() {
   // ----------- States -----------
   const [currentWord, setCurrentWord] = useState(() => getRandomWord())
 
+  console.log(currentWord)
+
   const [guessedLetters, setGuessedLetters] = useState([])
 
   const [wordListType, setWordListTypeState] = useState(getWordListType())
@@ -175,8 +177,8 @@ function App() {
     <main className={`theme-${wordListType}`}>
       {
         isGameWon && <Confetti 
-                        width={1535} 
-                        height={725} 
+                        width={1520} 
+                        height={720} 
                         recycle={false} 
                         numberOfPieces={1000}/>
       }
