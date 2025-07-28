@@ -4,6 +4,7 @@ import './App.css'
 import { languages } from "./languages.js"
 import { getFarewellText, getRandomWord, setWordList, getWordListType } from "./utils.js"
 import Confetti from "react-confetti"
+import useWindowSize from './useWindowSize'
 
 function App() {
 
@@ -30,6 +31,8 @@ function App() {
   const lastGuessedLetter = guessedLetters[guessedLetters.length - 1]
 
   const isLastGuessIncorrect = lastGuessedLetter && !currentWord.includes(lastGuessedLetter)
+
+  const { width, height } = useWindowSize();
 
    // ----------- Functions -----------
   function addGuessedLetter(letter) {
@@ -177,8 +180,8 @@ function App() {
     <main className={`theme-${wordListType}`}>
       {
         isGameWon && <Confetti 
-                        width={1520} 
-                        height={720} 
+                        width={width - 5} 
+                        height={height - 5} 
                         recycle={false} 
                         numberOfPieces={1000}/>
       }

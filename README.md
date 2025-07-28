@@ -3,13 +3,14 @@
   Assemble
 </h1>
 
-## Hangman with a tech twist
+## Hangman game with a tech twist
 
 Live Demo ----> https://assemble10.netlify.app/
 
 ## ❓ How to play
-* Guess the letters to "assemble" the word in order to protect the programming languages from the evil Assembly!
-* You can switch from normal words to tech-related words and vice versa (currently under construction)
+* Guess the letters to "assemble" the word so you can protect the programming languages from the evil Assembly!
+* 8 strikes and you lose
+* You can switch from normal words to tech-related words using the toggle for a more challenging experience
 
 # Preview
 ## Normal Words
