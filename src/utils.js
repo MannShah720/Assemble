@@ -1,8 +1,10 @@
-import { words } from "./words"
+import { normalWords, techWords } from "./words"
+
+const wordList = normalWords
 
 export function getRandomWord() {
-    const randomIndex = Math.floor(Math.random() * words.length);
-    return words[randomIndex];
+    const randomIndex = Math.floor(Math.random() * wordList.length);
+    return wordList[randomIndex];
 }
 
 export function getFarewellText(language) {

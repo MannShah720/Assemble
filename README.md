@@ -5,7 +5,9 @@
 
 ## Hangman with a tech twist
 
-"Assemble" the word in order to protect the programming languages from the evil Assembly! 
+## ❓ How to play
+* Guess the letters to "assemble" the word in order to protect the programming languages from the evil Assembly!
+* You can switch from normal words to tech-related words and vice versa (currently under construction)
 
 ## Preview
 <p align="center">
