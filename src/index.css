@@ -111,14 +111,15 @@ section.word {
 }
 
 section.word > span {
-    height: 40px;
-    width: 40px;
-    background-color: #323232;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.125rem;
-    border-bottom: 1px solid #F9F4DA;
+  color: white;
+  height: 40px;
+  width: 40px;
+  background-color: #323232;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.125rem;
+  border-bottom: 1px solid #F9F4DA;
 }
 
 section.word > span.missed-letter {
@@ -205,9 +206,6 @@ main {
 }
 
 /* Tech Theme */
-.theme-tech {
-  color: #1f6feb;
-}
 
 .theme-tech .keyboard > button {
   background-color: #1f6feb;
