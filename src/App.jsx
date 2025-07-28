@@ -3,6 +3,7 @@ import { clsx } from "clsx"
 import './App.css'
 import { languages } from "./languages.js"
 import { getFarewellText, getRandomWord } from "./utils.js"
+import Confetti from "react-confetti"
 
 function App() {
 
@@ -145,6 +146,13 @@ function App() {
   // ----------- Return -----------
   return (
     <main>
+      {
+        isGameWon && <Confetti 
+                        width={1535} 
+                        height={725} 
+                        recycle={false} 
+                        numberOfPieces={1000}/>
+      }
       <header>
           <h1>Assemble</h1>
           <p>Guess the word within 8 attempts to protect the 

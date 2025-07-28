@@ -44,6 +44,7 @@ section.game-status {
     padding: 5px 0;
     width: 100%;
     max-width: 350px;
+    min-height: 60px;
 }
 
 section.game-status.won {
