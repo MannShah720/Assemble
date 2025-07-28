@@ -47,7 +47,7 @@ section.game-status {
     min-height: 60px;
 }
 
-section.game-status.won {
+div.game-status.won {
     background-color: #10A95B;
 }
 
@@ -142,6 +142,7 @@ section.keyboard > button {
     border-radius: 3px;
     border: none;
     cursor: pointer;
+    transition: background-color 0.5s ease;
 }
 
 section.keyboard > button.correct {
@@ -180,4 +181,103 @@ button.new-game {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border: 0;
+}
+
+/* === Theme Transitions === */
+main {
+  transition: background-color 0.5s ease, color 0.5s ease;
+}
+
+/* Normal Theme */
+.theme-normal {
+  color: #D9D9D9;
+}
+
+/* Tech Theme */
+.theme-tech {
+  color: #1f6feb;
+}
+
+.theme-tech .keyboard > button {
+  background-color: #1f6feb;
+  transition: background-color 0.5s ease;
+}
+
+.theme-tech .keyboard > button.correct {
+  background-color: #2ea043;
+}
+
+.theme-tech .keyboard > button.wrong {
+  background-color: #f85149;
+}
+
+.theme-tech .new-game {
+  background-color: #FCBA29;
+}
+
+.theme-normal .new-game {
+  background-color: #1f6feb;
+}
+
+/* === Toggle Switch === */
+.toggle-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.toggle-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.toggle-switch {
+  width: 50px;
+  height: 26px;
+  background-color: #ccc;
+  border-radius: 15px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-switch.active {
+  background-color: #10A95B;
+}
+
+.toggle-circle {
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transition: left 0.3s ease;
+}
+
+.toggle-switch.active .toggle-circle {
+  left: 27px;
+}
+
+.toggle-label {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* === Word Fade-In === */
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }

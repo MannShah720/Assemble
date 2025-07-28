@@ -144,6 +144,7 @@ function App() {
     }
   }
 
+  // ----------- Buttons -----------
   const newGameBtn = (
     <button 
     className="new-game" 
@@ -153,9 +154,22 @@ function App() {
     </button>
   )
 
+  const toggleBtn = (
+    <div className="toggle-wrapper">
+      <div className="toggle-container" onClick={toggleWordListType}>
+        <div className={`toggle-switch ${wordListType === "tech" ? "active" : ""}`}>
+          <div className="toggle-circle" />
+        </div>
+        <span className="toggle-label">
+          {wordListType === "tech" ? "Tech Words" : "Normal Words"}
+        </span>
+      </div>
+    </div>
+  )
+
   // ----------- Return -----------
   return (
-    <main>
+    <main className={`theme-${wordListType}`}>
       {
         isGameWon && <Confetti 
                         width={1535} 
@@ -168,9 +182,7 @@ function App() {
           <p>Guess the word within 8 attempts to protect the 
           programming languages from Assembly!</p>
 
-          <button className="new-game" onClick={toggleWordListType}>
-            Switch to {wordListType === "normal" ? "Tech" : "Normal"} Words
-          </button>
+          {toggleBtn}
       </header>
 
       <section 
@@ -185,7 +197,7 @@ function App() {
         {langElements}
       </section>
 
-      <section className="word">
+      <section key={currentWord} className={`word fade-in`}>
         {wordElements}
       </section>
 
