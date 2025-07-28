@@ -176,7 +176,7 @@ section.keyboard > button:disabled {
   width: 200px;
   height: 40px;
   padding: 6px 12px;
-  display: block
+  display: block;
   margin-inline: auto;
   cursor: pointer;
   transition: opacity 0.2s ease-in;
