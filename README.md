@@ -5,6 +5,8 @@
 
 ## Hangman with a tech twist
 
+Live Demo ----> https://assemble10.netlify.app/
+
 ## ❓ How to play
 * Guess the letters to "assemble" the word in order to protect the programming languages from the evil Assembly!
 * You can switch from normal words to tech-related words and vice versa (currently under construction)
