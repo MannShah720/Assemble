@@ -3,4 +3,12 @@
   Assemble
 </h1>
 
-## Wordle Clone with a tech twist
+## Hangman Clone with a tech twist
+
+"Assemble" the word in order to protect the programming languages from the evil Assembly language! 
+
+## 🛠️ Built with
+* React
+* HTML, CSS, Javascript
+* Vite
+* During this project, i learnt about `clsx` for constructing className strings conditionally
