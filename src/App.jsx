@@ -146,12 +146,15 @@ function App() {
 
   // ----------- Buttons -----------
   const newGameBtn = (
-    <button 
-    className="new-game" 
-    onClick={startNewGame}
-    >
-      New Game
-    </button>
+    <div className="new-game-wrapper">
+      <button
+        className="new-game"
+        style={{ visibility: isGameOver ? 'visible' : 'hidden' }}
+        onClick={startNewGame}
+      >
+        New Game
+      </button>
+    </div>
   )
 
   const toggleBtn = (
@@ -224,7 +227,7 @@ function App() {
         {keyboardElements}
       </section>
 
-      {isGameOver && newGameBtn}
+      {newGameBtn}
     </main>
   )
 }
