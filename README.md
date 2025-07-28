@@ -9,13 +9,13 @@
 
 ## Preview
 <p align="center">
-    <img src="src/assets/Preview1.png" alt="Preview-Img" width="400">
-    <img src="src/assets/Preview2.png" alt="Preview-Img" width="400">
+    <img src="src/assets/Preview1.png" alt="Preview-Img1" width="400">
+    <img src="src/assets/Preview2.png" alt="Preview-Img2" width="400">
 </p>
 
 <p align="center">
-    <img src="src/assets/Preview Won.png" alt="Preview-Img" width="400">
-    <img src="src/assets/Preview Lost.png" alt="Preview-Img" width="400">
+    <img src="src/assets/Preview Win.png" alt="Won-Img" width="400">
+    <img src="src/assets/Preview Lost.png" alt="Lost-Img" width="400">
 </p>
 
 ## 🛠️ Built with
