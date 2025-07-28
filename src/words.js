@@ -40,14 +40,24 @@ export const normalWords = [
 ];
 
 export const techWords = [
-  "abstraction", "access", "algorithm", "api", "array", "authentication", 
-  "backend", "binary", "boolean", "browser", "bug", "class", "cli", "closure", 
-  "cloud", "commit", "component", "compiler", "css", "database", "debug", 
-  "deploy", "docker", "dom", "encryption", "firewall", "framework", "frontend", 
-  "function", "git", "html", "http", "inheritance", "interface", "javascript", 
-  "json", "kubernetes", "loop", "memory", "middleware", "node", "object", 
-  "oop", "parameter", "php", "python", "query", "react", "recursion", "render", 
-  "request", "response", "rest", "route", "runtime", "sass", "schema", "script", 
-  "server", "session", "socket", "sql", "stack", "typescript", "url", "user", 
-  "variable", "vue", "webpack", "xml"
+  "algorithm", "android", "api", "array", "automation", "backend", "bandwidth", "binary", "bit", "blockchain", "boolean", "bot",
+  "browser", "bug", "byte", "cache", "captcha", "cd", "certificate", "chip", "cloud", "code", "compiler", "compression", "compute",
+  "console", "cookie", "cpu", "cryptography", "css", "cybersecurity", "dashboard", "data", "database", "debug", "decryption",
+  "deepfake", "deep learning", "default", "deployment", "devops", "dhcp", "digital", "disk", "dns", "docker", "domain", "download",
+  "dpi", "driver", "drone", "dynamic", "email", "encryption", "endpoint", "ethernet", "exception", "executable", "export", "extension",
+  "firewall", "firmware", "flag", "frontend", "ftp", "function", "gaming", "gateway", "gigabyte", "git", "github", "gpu", "graphics",
+  "gui", "hack", "hacker", "hardware", "hash", "hd", "heap", "hosting", "html", "http", "https", "hyperlink", "icon", "import", "input",
+  "instance", "int", "interface", "internet", "intranet", "ip", "iteration", "java", "javascript", "joystick", "json", "kernel", "key",
+  "keyword", "laptop", "latency", "layer", "library", "link", "linux", "load", "logic", "login", "loop", "machine learning", "macro",
+  "malware", "markup", "media", "memory", "metadata", "method", "middleware", "migration", "mobile", "modem", "module", "monitor",
+  "motherboard", "mouse", "multithread", "nanotech", "network", "node", "notebook", "null", "object", "offline", "open source", "os",
+  "output", "overflow", "packet", "parameter", "password", "patch", "pdf", "ping", "pixel", "platform", "plugin", "pointer", "port",
+  "process", "program", "protocol", "proxy", "python", "query", "queue", "ram", "react", "reboot", "recursion", "remote", "repository",
+  "resolution", "responsive", "restore", "robot", "router", "runtime", "san", "save", "scan", "scanner", "script", "sdk", "search",
+  "security", "semantics", "seo", "server", "service", "shell", "simulation", "smart", "software", "source", "spam", "spec", "speech",
+  "spoofing", "spyware", "sql", "ssh", "stack", "storage", "stream", "string", "subnet", "switch", "syntax", "system", "tablet",
+  "tag", "task", "tech", "terminal", "thread", "token", "tool", "trackpad", "traffic", "transistor", "transfer", "trojan", "ui",
+  "unit", "update", "upload", "url", "usb", "user", "utility", "uuid", "ux", "variable", "version", "virtual", "virus", "visual",
+  "vm", "vpn", "vr", "web", "webcam", "webhook", "website", "wifi", "window", "wireframe", "wireless", "wizard", "workflow", "xml",
+  "zip"
 ];

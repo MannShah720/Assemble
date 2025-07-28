@@ -1,10 +1,18 @@
 import { normalWords, techWords } from "./words"
 
-const wordList = normalWords
+let currentWordList = normalWords
+
+export function setWordList(type) {
+  currentWordList = type === "tech" ? techWords : normalWords
+}
+
+export function getWordListType() {
+  return currentWordList === techWords ? "tech" : "normal"
+}
 
 export function getRandomWord() {
-    const randomIndex = Math.floor(Math.random() * wordList.length);
-    return wordList[randomIndex];
+    const randomIndex = Math.floor(Math.random() * currentWordList.length);
+    return currentWordList[randomIndex];
 }
 
 export function getFarewellText(language) {

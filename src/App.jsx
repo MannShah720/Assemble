@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { clsx } from "clsx"
 import './App.css'
 import { languages } from "./languages.js"
-import { getFarewellText, getRandomWord } from "./utils.js"
+import { getFarewellText, getRandomWord, setWordList, getWordListType } from "./utils.js"
 import Confetti from "react-confetti"
 
 function App() {
@@ -11,6 +11,8 @@ function App() {
   const [currentWord, setCurrentWord] = useState(() => getRandomWord())
 
   const [guessedLetters, setGuessedLetters] = useState([])
+
+  const [wordListType, setWordListTypeState] = useState(getWordListType())
 
   // ----------- Game Values -----------
   const numGuessesLeft = languages.length - 1
@@ -27,6 +29,7 @@ function App() {
 
   const isLastGuessIncorrect = lastGuessedLetter && !currentWord.includes(lastGuessedLetter)
 
+   // ----------- Functions -----------
   function addGuessedLetter(letter) {
     setGuessedLetters(prevLetters => 
       prevLetters.includes(letter) ? prevLetters : [...prevLetters, letter])
@@ -35,6 +38,13 @@ function App() {
   function startNewGame() {
     setCurrentWord(getRandomWord())
     setGuessedLetters([])
+  }
+  
+  function toggleWordListType() {
+    const newType = (wordListType === "normal" )? "tech" : "normal"
+    setWordList(newType)
+    setWordListTypeState(newType)
+    startNewGame()
   }
 
 
@@ -157,6 +167,10 @@ function App() {
           <h1>Assemble</h1>
           <p>Guess the word within 8 attempts to protect the 
           programming languages from Assembly!</p>
+
+          <button className="new-game" onClick={toggleWordListType}>
+            Switch to {wordListType === "normal" ? "Tech" : "Normal"} Words
+          </button>
       </header>
 
       <section 
