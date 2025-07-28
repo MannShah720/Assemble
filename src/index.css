@@ -162,7 +162,7 @@ section.keyboard > button:disabled {
   height: 40px;
   display: flex;
   justify-content: center;
-  margin-bottom: 32px;
+  margin-bottom: 0;
 }
 
 .new-game-wrapper .new-game {
